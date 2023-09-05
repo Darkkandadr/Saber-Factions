@@ -3,7 +3,6 @@ package com.massivecraft.factions.zcore.persist;
 import cc.javajobs.wgbridge.WorldGuardBridge;
 import cc.javajobs.wgbridge.infrastructure.struct.WGRegionSet;
 import com.massivecraft.factions.*;
-import com.massivecraft.factions.cmd.audit.FLogType;
 import com.massivecraft.factions.event.*;
 import com.massivecraft.factions.event.FactionDisbandEvent.PlayerDisbandReason;
 import com.massivecraft.factions.iface.EconomyParticipator;
@@ -831,8 +830,6 @@ public abstract class MemoryFPlayer implements FPlayer {
 
         this.resetFactionData();
 
-
-        FactionsPlugin.instance.logFactionEvent(myFaction, FLogType.INVITES, this.getName(), CC.Red + "left", "the faction");
         setFlying(false);
         if (myFaction.isNormal() && !perm && myFaction.getFPlayers().isEmpty()) {
             // Remove this faction

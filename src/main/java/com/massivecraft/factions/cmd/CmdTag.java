@@ -1,7 +1,6 @@
 package com.massivecraft.factions.cmd;
 
 import com.massivecraft.factions.*;
-import com.massivecraft.factions.cmd.audit.FLogType;
 import com.massivecraft.factions.event.FactionRenameEvent;
 import com.massivecraft.factions.scoreboards.FTeamWrapper;
 import com.massivecraft.factions.struct.Permission;
@@ -77,8 +76,6 @@ public class CmdTag extends FCommand {
 
                 String oldtag = context.faction.getTag();
                 context.faction.setTag(tag);
-
-                FactionsPlugin.instance.logFactionEvent(context.faction, FLogType.FTAG_EDIT, context.fPlayer.getName(), tag);
 
 
                 // Inform

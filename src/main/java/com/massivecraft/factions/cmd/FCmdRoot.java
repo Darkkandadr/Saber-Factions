@@ -3,11 +3,9 @@ package com.massivecraft.factions.cmd;
 import com.massivecraft.factions.Conf;
 import com.massivecraft.factions.FactionsPlugin;
 import com.massivecraft.factions.cmd.alts.CmdAlts;
-import com.massivecraft.factions.cmd.audit.CmdAudit;
 import com.massivecraft.factions.cmd.banner.CmdBanner;
 import com.massivecraft.factions.cmd.banner.CmdTpBanner;
 import com.massivecraft.factions.cmd.check.CmdCheck;
-import com.massivecraft.factions.cmd.check.CmdWeeWoo;
 import com.massivecraft.factions.cmd.chest.CmdChest;
 import com.massivecraft.factions.cmd.claim.*;
 import com.massivecraft.factions.cmd.drain.CmdDrain;
@@ -156,7 +154,6 @@ public class FCmdRoot extends FCommand implements CommandExecutor {
     public CmdDebug cmdDebug = new CmdDebug();
     public CmdDrain cmdDrain = new CmdDrain();
     public CmdLookup cmdLookup = new CmdLookup();
-    public CmdAudit cmdAudit = new CmdAudit();
     public CmdReserve cmdReserve = new CmdReserve();
     public CmdDelHome cmdDelHome = new CmdDelHome();
     public CmdClaimFill cmdClaimFill = new CmdClaimFill();
@@ -378,7 +375,6 @@ public class FCmdRoot extends FCommand implements CommandExecutor {
         }
 
         if (Conf.useAuditSystem) {
-            this.addSubCommand(cmdAudit);
             fAuditEnabled = true;
         }
 

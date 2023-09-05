@@ -1370,13 +1370,6 @@ public abstract class MemoryFaction implements Faction, EconomyParticipator {
         for (FPlayer fPlayer : fplayers) fPlayer.resetFactionData(false);
         for (FPlayer fPlayer : alts) fPlayer.resetFactionData(false);
 
-        try {
-            if (FactionsPlugin.getInstance() != null && FactionsPlugin.getInstance().getFlogManager() != null && FactionsPlugin.getInstance().getFlogManager().getFactionLogMap() != null) {
-                FactionsPlugin.getInstance().getFlogManager().getFactionLogMap().remove(this.getId());
-            }
-        } catch (Exception exception) {
-            // empty catch block
-        }
     }
 
     public Set<FLocation> getAllClaims() {

@@ -248,9 +248,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>net.ess3</groupId>
+            <groupId>net.essentialsx</groupId>
             <artifactId>EssentialsX</artifactId>
-            <version>2.16.0</version>
+            <version>2.20.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -440,6 +440,14 @@
         <repository>
             <id>ess-repo</id>
             <url>https://repo.essentialsx.net/releases/</url>
+        </repository>
+        <repository>
+            <id>essentials-releases</id>
+            <url>https://repo.essentialsx.net/releases/</url>
+        </repository>
+        <repository>
+            <id>paper-repo</id>
+            <url>https://papermc.io/repo/repository/maven-public/</url>
         </repository>
         <repository>
             <id>spigot-repo</id>

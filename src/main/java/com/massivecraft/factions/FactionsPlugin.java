@@ -11,8 +11,6 @@ import com.massivecraft.factions.cmd.CommandContext;
 import com.massivecraft.factions.cmd.FCmdRoot;
 import com.massivecraft.factions.cmd.FCommand;
 import com.massivecraft.factions.cmd.audit.FChestListener;
-import com.massivecraft.factions.cmd.audit.FLogManager;
-import com.massivecraft.factions.cmd.audit.FLogType;
 import com.massivecraft.factions.cmd.banner.listener.BannerListener;
 import com.massivecraft.factions.cmd.banner.struct.BannerManager;
 import com.massivecraft.factions.cmd.chest.AntiChestListener;
@@ -96,7 +94,6 @@ public class FactionsPlugin extends MPlugin {
     public boolean useNonPacketParticles = false;
     public List<String> itemList = getConfig().getStringList("fchest.Items-Not-Allowed");
     public boolean hookedPlayervaults;
-    public FLogManager fLogManager;
     public List<ReserveObject> reserveObjects;
     public FileManager fileManager;
     public TimerManager timerManager;
@@ -424,14 +421,6 @@ public class FactionsPlugin extends MPlugin {
     // If another plugin is handling insertion of chat tags, this should be used to notify Factions
     public void handleFactionTagExternally(boolean notByFactions) {
         Conf.chatTagHandledByAnotherPlugin = notByFactions;
-    }
-
-    public FLogManager getFlogManager() {
-        return fLogManager;
-    }
-
-    public void logFactionEvent(Faction faction, FLogType type, String... arguments) {
-        this.fLogManager.log(faction, type, arguments);
     }
 
     public LunarClientWrapper getLunarClientWrapper() {

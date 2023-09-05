@@ -88,11 +88,9 @@ public class FChestListener implements Listener {
 
     private void logAddItem(ItemStack cursorItem, FPlayer fplayer, Player player) {
         String itemName = cursorItem.hasItemMeta() && cursorItem.getItemMeta().hasDisplayName() ? cursorItem.getItemMeta().getDisplayName() : StringUtils.capitaliseAllWords(cursorItem.getType().name().replace("_", " ").toLowerCase());
-        FactionsPlugin.instance.logFactionEvent(fplayer.getFaction(), FLogType.FCHEST_EDIT, player.getName(), CC.GreenB + "ADDED", itemName);
     }
 
     private void logRemoveItem(ItemStack currentItem, FPlayer fplayer, Player player) {
         String itemName = currentItem.hasItemMeta() && currentItem.getItemMeta().hasDisplayName() ? currentItem.getItemMeta().getDisplayName() : StringUtils.capitaliseAllWords(currentItem.getType().name().replace("_", " ").toLowerCase());
-        FactionsPlugin.instance.logFactionEvent(fplayer.getFaction(), FLogType.FCHEST_EDIT, player.getName(), CC.RedB + "TOOK", itemName);
     }
 }

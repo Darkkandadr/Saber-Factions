@@ -1,17 +1,13 @@
 package com.massivecraft.factions.zcore.util;
 
-import com.cryptomorin.xseries.XMaterial;
 import com.lunarclient.bukkitapi.LunarClientAPI;
 import com.massivecraft.factions.*;
 import com.massivecraft.factions.cmd.Aliases;
-import com.massivecraft.factions.cmd.audit.FLogManager;
 import com.massivecraft.factions.cmd.check.CheckTask;
-import com.massivecraft.factions.cmd.check.WeeWooTask;
 import com.massivecraft.factions.cmd.reserve.ListParameterizedType;
 import com.massivecraft.factions.cmd.reserve.ReserveObject;
 import com.massivecraft.factions.data.helpers.FactionDataHelper;
 import com.massivecraft.factions.integration.Econ;
-import com.massivecraft.factions.integration.Essentials;
 import com.massivecraft.factions.integration.LunarClientWrapper;
 import com.massivecraft.factions.integration.dynmap.EngineDynmap;
 import com.massivecraft.factions.util.Logger;
@@ -19,7 +15,6 @@ import com.massivecraft.factions.util.Metrics;
 import com.massivecraft.factions.util.timer.TimerManager;
 import com.massivecraft.factions.zcore.file.impl.FileManager;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.EntityType;
 import org.bukkit.plugin.Plugin;
 import org.saberdev.corex.CoreX;
 
@@ -29,9 +24,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-import static com.massivecraft.factions.Conf.safeZoneNerfedCreatureTypes;
-import static com.massivecraft.factions.Conf.territoryDenyUsageMaterials;
-
 public class StartupParameter {
 
     public static void initData(FactionsPlugin plugin, Runnable finish) {
@@ -39,8 +31,6 @@ public class StartupParameter {
 
         FactionsPlugin.getInstance().fileManager = new FileManager();
         FactionsPlugin.getInstance().fileManager.setupFiles();
-
-        FactionsPlugin.getInstance().fLogManager = new FLogManager();
 
         FPlayers.getInstance().load(playersLoaded -> Factions.getInstance().load(factionsLoaded -> {
             for (FPlayer fPlayer : FPlayers.getInstance().getAllFPlayers()) {
@@ -88,8 +78,6 @@ public class StartupParameter {
 
                // FactionsPlugin.getInstance().getServer().getScheduler().runTaskTimerAsynchronously(plugin, WeeWooTask::new, 600L, 600L);
             }
-
-            FactionsPlugin.getInstance().fLogManager.loadLogs(plugin);
 
             FactionsPlugin.getInstance().timerManager = new TimerManager(plugin);
             FactionsPlugin.getInstance().timerManager.reloadTimerData();

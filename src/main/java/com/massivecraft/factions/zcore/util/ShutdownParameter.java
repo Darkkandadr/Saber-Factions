@@ -24,7 +24,6 @@ public class ShutdownParameter {
 
         FactionDataHelper.onDisable();
 
-        FactionsPlugin.getInstance().getFlogManager().saveLogs();
         saveReserves();
 
     }

@@ -48,7 +48,6 @@ public class LogTimer extends ConcurrentHashMap<LogTimer.TimerType, Map<LogTimer
                                     entityCounts.computeIfAbsent(types, (e) -> new AtomicInteger(0)).addAndGet(ints.get());
                                 }
                             });
-                            entityCounts.forEach((entityType, count) -> FactionsPlugin.instance.getFlogManager().log(faction, FLogType.SPAWNER_EDIT, username, subTimer == TimerSubType.SPAWNER_BREAK ? "broke" : "placed", count.get() + "x", StringUtils.capitaliseAllWords(entityType.name().toLowerCase().replace("_", " "))));
                         }
                     });
                 }
